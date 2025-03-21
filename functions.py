@@ -2,7 +2,7 @@
 def get_valid_float(prompt):
     while True:
         try:
-            if prompt:
+            if prompt and not prompt.strip()[-1] == ":":
                 prompt=prompt.strip()+": "
             value = float(input(prompt))
 
@@ -14,6 +14,9 @@ def get_valid_float(prompt):
             print("Invalid input, please enter a valid number.\n")
 
 def get_valid_string(prompt):
+    if prompt and not prompt.strip()[-1] == ":":
+        prompt = prompt.strip() + ": "
+
     while True:
         value = input(prompt).strip()
 
@@ -23,6 +26,8 @@ def get_valid_string(prompt):
             print("Invalid input, the string cannot be empty.\n")
 
 def get_valid_y_n(prompt):
+    if prompt:
+        prompt=prompt.strip()+" (Y/n): "
     value = get_valid_string(prompt)
 
     while True:
@@ -37,8 +42,8 @@ def get_valid_y_n(prompt):
 def add_income(budget_data):
     """מוסיף הכנסה לתקציב ומעדכן את היתרה"""
     while True:
-        amount = get_valid_float("Enter income amount: ")
-        description = get_valid_string("Enter description: ")
+        amount = get_valid_float("Enter income amount")
+        description = get_valid_string("Enter description")
 
         budget_data["transactions"].append({"type": "income", "amount": amount, "description": description})
         budget_data["balance"] += amount
