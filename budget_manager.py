@@ -1,4 +1,4 @@
-import functions  # מייבא את הפונקציות מקובץ functions.py
+from functions import * # מייבא את הפונקציות מקובץ py
 
 # יצירת מבנה הנתונים
 def main(data):
@@ -13,20 +13,18 @@ def main(data):
         choice = input("Select an option: ")
 
         if choice == "1":
-            amount = float(input("Enter income amount: "))
-            description = input("Enter description: ")
-            data = functions.add_income(data, amount, description)
+            data = add_income(data)
 
         elif choice == "2":
             amount = float(input("Enter expense amount: "))
             description = input("Enter description: ")
-            data = functions.add_expense(data, amount, description)
+            data = add_expense(data, amount, description)
 
         elif choice == "3":
-            functions.show_balance(data)
+            show_balance(data)
 
         elif choice == "4":
-            functions.show_transactions(data)
+            show_transactions(data)
 
         elif choice == "5":
             print("Exiting...")
