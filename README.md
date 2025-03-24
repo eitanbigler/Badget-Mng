@@ -1,6 +1,8 @@
 # Badget-Mng
 
-Hi! I am Eןאשמ and I am a student at the Technion's DevOps Professional Course. This is schoolwork!
+Hi! 
+My name is Eitan and I am a student at the Technion's DevOps Professional Course.
+This is schoolwork!
 
 The system will add a log of incomes and expenses.
 
